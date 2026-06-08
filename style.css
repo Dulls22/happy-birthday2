@@ -1,0 +1,149 @@
+/* ============================================================
+   CSS UTAMA
+============================================================ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: 'Poppins', sans-serif; overflow-x: hidden; background: #0f172a; }
+
+.page { display: none; min-height: 100vh; width: 100%; padding: 40px 20px; position: relative; flex-direction: column; align-items: center; justify-content: center; animation: fadeIn 0.8s ease; }
+.page.active { display: flex; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ===== LOADING SCREEN ===== */
+#loadingScreen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #4c0519 0%, #1a0533 100%); z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 1s ease, visibility 1s ease; }
+.flower-stack { position: relative; width: 150px; height: 150px; }
+.loading-flower { position: absolute; top: 0; left: 0; width: 100%; height: 100%; transform-origin: center; }
+.lf1 { animation: spinLayer 4s infinite linear; }
+.lf2 { transform: scale(0.7) rotate(15deg); animation: spinLayer 3s infinite linear reverse; --s: 0.7; }
+@keyframes spinLayer { 0% { transform: scale(var(--s, 1)) rotate(0deg); } 100% { transform: scale(var(--s, 1)) rotate(360deg); } }
+.loading-text { font-family: 'Dancing Script', cursive; font-size: 26px; color: #fda4af; margin-top: 30px; letter-spacing: 2px; animation: pulseText 1.5s infinite; transition: opacity 0.5s; }
+@keyframes pulseText { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.6; transform: scale(0.95); } }
+.flower-bloom { animation: bloomOut 1.2s forwards cubic-bezier(0.4, 0, 0.2, 1) !important; }
+@keyframes bloomOut { 0% { transform: scale(var(--s, 1)) rotate(0deg); opacity: 1; } 100% { transform: scale(6) rotate(90deg); opacity: 0; filter: blur(5px); } }
+
+/* ===== KELOPAK MAWAR JATUH ===== */
+#rosePetals { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+.rose-petal { position: absolute; background: #e11d48; border-radius: 2px 50px 2px 50px; box-shadow: 0 0 10px rgba(225, 29, 72, 0.5); opacity: 0; animation: fallPetal linear infinite; }
+@keyframes fallPetal {
+  0% { transform: translateY(-10vh) rotate(0deg) scale(var(--s)); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(360deg) scale(var(--s)); opacity: 0; }
+}
+
+/* ===== PAGE 1 ===== */
+#page1 { background: linear-gradient(135deg, #1a0533 0%, #4c0519 100%); text-align: center; }
+.stars, .confetti-burst, .bokeh-container { position: fixed; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; overflow: hidden; z-index: 0; }
+.star { position: absolute; color: #fde68a; animation: twinkle 2s infinite alternate; }
+@keyframes twinkle { from { opacity: 0.2; transform: scale(0.8); } to { opacity: 1; transform: scale(1.2); } }
+.confetti-piece { position: absolute; animation: confettiFall linear infinite; border-radius: 2px; }
+@keyframes confettiFall { 0% { transform: translateY(-20px) rotate(0deg); opacity: 1; } 100% { transform: translateY(105vh) rotate(720deg); opacity: 0; } }
+.cake-wrap { position: relative; z-index: 1; margin-bottom: 20px; animation: bounce 2s ease-in-out infinite; }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.cake-svg { filter: drop-shadow(0 0 20px rgba(253,186,116,0.6)); }
+.hbd-title { position: relative; z-index: 1; font-family: 'Dancing Script', cursive; font-size: clamp(36px, 8vw, 60px); font-weight: 700; color: #fde68a; text-shadow: 0 0 30px rgba(253,186,116,0.8), 0 4px 12px rgba(0,0,0,0.4); line-height: 1.1; margin-bottom: 8px; }
+.hbd-name { position: relative; z-index: 1; font-family: 'Dancing Script', cursive; font-size: clamp(24px, 5vw, 42px); color: #fda4af; text-shadow: 0 0 20px rgba(249,168,212,0.6); margin-bottom: 16px; }
+.hbd-sub { position: relative; z-index: 1; font-size: 13px; color: rgba(255,255,255,0.7); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 32px; }
+
+/* ===== PAGE 2 ===== */
+#page2 { background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 50%, #831843 100%); }
+.page-label { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; z-index: 1;}
+.letter-container { width: 100%; max-width: 560px; background: #fffef5; border-radius: 4px; padding: 40px; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,0,0,0.1); animation: letterOpen 0.8s ease; z-index: 1; }
+@keyframes letterOpen { from { transform: scaleY(0.1) translateY(-40px); opacity: 0; } to { transform: scaleY(1) translateY(0); opacity: 1; } }
+.letter-seal { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 40px; height: 40px; background: #be123c; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+.letter-lines { position: absolute; top: 40px; left: 0; right: 0; bottom: 0; pointer-events: none; overflow: hidden; border-radius: 0 0 4px 4px; }
+.letter-line { position: absolute; left: 40px; right: 40px; height: 1px; background: rgba(244,114,182,0.2); }
+.letter-date { font-family: 'Dancing Script', cursive; font-size: 15px; color: #6b7280; text-align: right; margin-bottom: 20px; }
+.letter-greeting { font-family: 'Dancing Script', cursive; font-size: 24px; color: #4c0519; margin-bottom: 16px; }
+.letter-body { font-size: 14px; color: #374151; line-height: 1.9; margin-bottom: 24px; }
+.letter-sign { font-family: 'Dancing Script', cursive; font-size: 22px; color: #4c0519; text-align: right; }
+.letter-from { font-family: 'Dancing Script', cursive; font-size: 16px; color: #6b7280; text-align: right; margin-top: 4px; }
+
+/* ===== PAGE 3 (ALBUM SCRAPBOOK) ===== */
+#page3 { background: linear-gradient(135deg, #171717 0%, #2e1065 50%, #4c0519 100%); padding: 40px 16px; }
+.album-title { font-family: 'Dancing Script', cursive; font-size: clamp(28px, 6vw, 42px); color: #fda4af; text-align: center; margin-bottom: 6px; text-shadow: 0 0 20px rgba(253,164,175,0.5); z-index:2;}
+.album-sub { font-size: 11px; color: rgba(255,255,255,0.4); text-align: center; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; z-index:2;}
+
+.bokeh-particle { position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(253,164,175,0.6) 0%, rgba(253,164,175,0) 70%); animation: floatBokeh 6s infinite alternate ease-in-out; }
+@keyframes floatBokeh { 0% { transform: translateY(0) scale(1); opacity: 0.2; } 100% { transform: translateY(-50px) scale(1.5); opacity: 0.6; } }
+
+.music-player { display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.1); padding: 10px 16px; border-radius: 30px; backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.2); z-index:2;}
+.music-btn { width: 32px; height: 32px; border-radius: 50%; border: none; background: #fda4af; color: #4c0519; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 14px; }
+.music-info { flex-grow: 1; min-width: 120px; }
+.music-title { font-size: 12px; color: white; margin-bottom: 4px; white-space: nowrap; }
+.music-bar-wrap { width: 100%; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; overflow: hidden; }
+.music-bar { height: 100%; width: 0%; background: #fda4af; }
+.music-note { color: #fda4af; font-size: 16px; animation: noteBounce 1s infinite alternate; }
+.music-note.paused { animation: none; opacity: 0.5; }
+
+.flower-intro { position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(135deg, #171717, #4c0519); z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.8s ease; }
+.intro-flower-svg { width: 140px; height: 140px; transform: scale(0); animation: flowerIntroAnim 2.5s ease-in-out forwards; }
+.intro-text { font-family: 'Dancing Script', cursive; color: #fda4af; font-size: 28px; margin-top: 20px; opacity: 0; animation: fadeInOutText 2.5s ease-in-out forwards; }
+@keyframes flowerIntroAnim { 0% { transform: scale(0) rotate(-90deg); opacity: 0; } 40% { transform: scale(1.2) rotate(10deg); opacity: 1; filter: drop-shadow(0 0 20px rgba(225,29,72,0.8)); } 80% { transform: scale(1) rotate(0deg); opacity: 1; filter: drop-shadow(0 0 10px rgba(225,29,72,0.5)); } 100% { transform: scale(1) rotate(0deg); opacity: 0; } }
+@keyframes fadeInOutText { 0%, 100% { opacity: 0; transform: translateY(10px); } 30%, 80% { opacity: 1; transform: translateY(0); } }
+
+.album-content { width: 100%; display: flex; flex-direction: column; align-items: center; transition: opacity 1s ease; z-index: 2;}
+.book-wrapper { position: relative; width: 100%; max-width: 500px; height: 260px; margin: 30px 0; display: flex; justify-content: center; align-items: center; perspective: 1500px; z-index:2;}
+#flipbook { position: absolute; left: 50%; width: 160px; height: 240px; transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1); box-shadow: 0 15px 35px rgba(0,0,0,0.5); border-radius: 2px 12px 12px 2px;}
+.book-page { position: absolute; width: 100%; height: 100%; top: 0; left: 0; transform-origin: left center; transform-style: preserve-3d; transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1); }
+.book-page.flipped { transform: rotateY(-180deg); }
+.page-front, .page-back { position: absolute; width: 100%; height: 100%; top: 0; left: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; background: #fffbf0; border-radius: 2px 12px 12px 2px; box-shadow: inset 4px 0 10px rgba(0,0,0,0.05), 2px 4px 10px rgba(0,0,0,0.15); border: 1px solid #e5e7eb; display: flex; flex-direction: column; align-items: center; padding: 12px; text-align: center; overflow: hidden; }
+.page-back { transform: rotateY(180deg); border-radius: 12px 2px 2px 12px; box-shadow: inset -4px 0 10px rgba(0,0,0,0.05), -2px 4px 10px rgba(0,0,0,0.15); }
+
+/* Tema Cover Velvet Red / Merah Elegan */
+.cover-front { background: linear-gradient(135deg, #7f1d1d, #450a0a); color: #fecdd3; border: 2px solid #fda4af; justify-content: center;}
+.cover-back { background: #450a0a; border: 2px solid #fda4af; }
+.album-ribbon { position: absolute; right: 15px; top: -5px; width: 25px; height: 105%; background: linear-gradient(to right, #fda4af, #ffe4e6, #fda4af); box-shadow: 0 0 10px rgba(0,0,0,0.3); z-index: 10;}
+.album-ribbon::after { content: ''; position: absolute; bottom: 0; left: 0; border-left: 12.5px solid transparent; border-right: 12.5px solid transparent; border-bottom: 15px solid #450a0a; }
+
+/* Kertas isi gaya Scrapbook */
+.scrapbook-page { background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 15px 15px; background-color: #fefce8; justify-content: center;}
+
+/* Polaroid Style */
+.polaroid { background: white; padding: 10px 10px 25px 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); position: relative; width: 90%; }
+.polaroid img { width: 100%; aspect-ratio: 1; object-fit: cover; background: #eee; border: 1px solid #ddd; }
+.polaroid-caption { font-family: 'Dancing Script', cursive; font-size: 18px; color: #111; margin-top: 8px; font-weight: bold; }
+.tape { position: absolute; top: -10px; left: 50%; transform: translateX(-50%) rotate(3deg); width: 60px; height: 18px; background: rgba(255, 255, 255, 0.5); box-shadow: 0 1px 3px rgba(0,0,0,0.1); backdrop-filter: blur(2px); border: 1px solid rgba(255,255,255,0.4); z-index: 2;}
+
+.book-controls { z-index: 2; position: relative;}
+
+/* ===== PAGE 4 (HADIAH SPESIAL) ===== */
+#page4 { background: linear-gradient(135deg, #4c1d95, #9d174d, #be123c); }
+.gift-header { text-align: center; margin-bottom: 40px; z-index: 2; }
+.gift-title { font-family: 'Dancing Script', cursive; font-size: clamp(32px, 8vw, 48px); color: #fde68a; text-shadow: 0 0 20px rgba(253,186,116,0.8); }
+.gift-sub { color: rgba(255,255,255,0.8); font-size: 14px; letter-spacing: 2px; }
+.gift-container { position: relative; width: 200px; height: 200px; cursor: pointer; perspective: 1000px; z-index: 2; }
+.gift-box { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 130px; height: 110px; transition: transform 0.3s; }
+.gift-box.shake { animation: shakeBox 0.5s infinite; }
+@keyframes shakeBox { 0%, 100% { transform: translateX(-50%) rotate(0deg); } 25% { transform: translateX(-55%) rotate(-5deg); } 75% { transform: translateX(-45%) rotate(5deg); } }
+.gift-body { position: absolute; bottom: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #ef4444, #dc2626); border-radius: 6px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); overflow: hidden;}
+.gift-lid { position: absolute; top: -20px; left: -10px; width: 150px; height: 35px; background: linear-gradient(135deg, #f87171, #ef4444); border-radius: 4px; z-index: 3; transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); box-shadow: 0 5px 10px rgba(0,0,0,0.2);}
+.gift-ribbon-v { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 22px; height: 100%; background: linear-gradient(to right, #fbbf24, #f59e0b); z-index: 2; }
+.gift-ribbon-h { position: absolute; top: 40%; left: 0; width: 100%; height: 22px; background: linear-gradient(to bottom, #fbbf24, #f59e0b); z-index: 2; }
+.gift-bow { position: absolute; top: -35px; left: 50%; transform: translateX(-50%); width: 60px; height: 30px; background: #f59e0b; clip-path: polygon(0 0, 100% 0, 50% 100%); z-index: 4; transition: opacity 0.3s; }
+.gift-content { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%) scale(0); opacity: 0; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.5); text-align: center; transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 1; width: 220px; }
+.gift-content img { width: 100%; border-radius: 8px; margin-bottom: 10px; }
+.gift-content h3 { font-family: 'Dancing Script', cursive; color: #db2777; font-size: 26px; margin-bottom: 5px; }
+.gift-content p { font-size: 13px; color: #4b5563; }
+.gift-container.opened .gift-lid { transform: translateY(-100px) rotate(15deg); opacity: 0; }
+.gift-container.opened .gift-bow { opacity: 0; }
+.gift-container.opened .gift-box { transform: translateX(-50%) scale(0.9); opacity: 0.8; }
+.gift-container.opened .gift-content { transform: translateX(-50%) scale(1); opacity: 1; bottom: 90px; z-index: 5; }
+.gift-container.opened:hover .gift-box { transform: translateX(-50%) scale(0.9); }
+
+/* ===== NAVIGASI UMUM ===== */
+.nav-dots { display: flex; gap: 10px; justify-content: center; margin-top: 28px; z-index: 2;}
+.nav-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; border: none; transition: all 0.3s; }
+.nav-dot.active { background: #fda4af; transform: scale(1.3); }
+.nav-btn { padding: 12px 28px; border: none; border-radius: 30px; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; transition: all 0.3s; letter-spacing: 1px; z-index: 2;}
+.btn-primary { background: linear-gradient(135deg, #e11d48, #be123c); color: white; box-shadow: 0 4px 20px rgba(225,29,72,0.4); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(225,29,72,0.5); }
+.btn-ghost { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); }
+.btn-ghost:hover { background: rgba(255,255,255,0.2); }
+.nav-row { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 20px; z-index: 2; position: relative;}
+
+@media (min-width: 480px) {
+  .book-wrapper { height: 340px; }
+  #flipbook { width: 240px; height: 320px; }
+  .polaroid { padding: 15px 15px 35px 15px; }
+  .polaroid-caption { font-size: 24px; }
+}

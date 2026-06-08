@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday 🎂</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div id="loadingScreen">
+    <div class="flower-stack">
+      <svg class="loading-flower lf1" viewBox="0 0 100 100">
+        <g fill="#e11d48">
+          <path d="M50 50 Q 65 10 50 5 Q 35 10 50 50" />
+          <path d="M50 50 Q 65 10 50 5 Q 35 10 50 50" transform="rotate(45 50 50)" />
+          <path d="M50 50 Q 65 10 50 5 Q 35 10 50 50" transform="rotate(90 50 50)" />
+          <path d="M50 50 Q 65 10 50 5 Q 35 10 50 50" transform="rotate(135 50 50)" />
+          <path d="M50 50 Q 65 10 50 5 Q 35 10 50 50" transform="rotate(180 50 50)" />
+          <path d="M50 50 Q 65 10 50 5 Q 35 10 50 50" transform="rotate(225 50 50)" />
+          <path d="M50 50 Q 65 10 50 50 Q 35 10 50 50" transform="rotate(270 50 50)" />
+          <path d="M50 50 Q 65 10 50 5 Q 35 10 50 50" transform="rotate(315 50 50)" />
+        </g>
+        <circle cx="50" cy="50" r="12" fill="#fbbf24" />
+      </svg>
+      <svg class="loading-flower lf2" viewBox="0 0 100 100">
+        <g fill="#fda4af">
+          <path d="M50 50 Q 65 10 50 5 Q 35 10 50 50" />
+          <path d="M50 50 Q 65 10 50 5 Q 35 10 50 50" transform="rotate(45 50 50)" />
+          <path d="M50 50 Q 65 10 50 5 Q 35 10 50 50" transform="rotate(90 50 50)" />
+          <path d="M50 50 Q 65 10 50 5 Q 35 10 50 50" transform="rotate(135 50 50)" />
+          <path d="M50 50 Q 65 10 50 5 Q 35 10 50 50" transform="rotate(180 50 50)" />
+          <path d="M50 50 Q 65 10 50 5 Q 35 10 50 50" transform="rotate(225 50 50)" />
+          <path d="M50 50 Q 65 10 50 50 Q 35 10 50 50" transform="rotate(270 50 50)" />
+          <path d="M50 50 Q 65 10 50 5 Q 35 10 50 50" transform="rotate(315 50 50)" />
+        </g>
+        <circle cx="50" cy="50" r="10" fill="#fecdd3" />
+      </svg>
+    </div>
+    <div class="loading-text">hmmmzzz apayaaa ?</div>
+  </div>
+
+  <div id="rosePetals"></div>
+
+  <div id="page1" class="page active">
+    <div class="stars" id="stars1"></div>
+    <div class="confetti-burst" id="confetti"></div>
+
+    <div class="cake-wrap">
+      <svg class="cake-svg" width="130" height="130" viewBox="0 0 120 120">
+        <ellipse cx="60" cy="100" rx="48" ry="8" fill="#f59e0b" opacity="0.3" />
+        <rect x="18" y="70" width="84" height="32" rx="6" fill="#fbbf24" />
+        <rect x="24" y="48" width="72" height="26" rx="5" fill="#f97316" />
+        <rect x="32" y="30" width="56" height="22" rx="4" fill="#fb923c" />
+        <path d="M32 30 Q36 22 40 30 Q44 22 48 30 Q52 22 56 30 Q60 22 64 30 Q68 22 72 30 Q76 22 80 30 Q84 22 88 30"
+          fill="none" stroke="white" stroke-width="4" stroke-linecap="round" />
+        <rect x="44" y="14" width="6" height="18" rx="2" fill="#ef4444" />
+        <rect x="57" y="10" width="6" height="22" rx="2" fill="#8b5cf6" />
+        <rect x="70" y="14" width="6" height="18" rx="2" fill="#3b82f6" />
+        <ellipse cx="47" cy="13" rx="4" ry="6" fill="#fde68a" opacity="0.9" />
+        <ellipse cx="60" cy="9" rx="4" ry="6" fill="#fde68a" opacity="0.9" />
+        <ellipse cx="73" cy="13" rx="4" ry="6" fill="#fde68a" opacity="0.9" />
+      </svg>
+    </div>
+
+    <div class="hbd-title">Happy Birthday!</div>
+    <div class="hbd-name">Nova adelia</div>
+    <div class="hbd-sub">✦ Selamat Ulang Tahun ✦</div>
+
+    <div class="nav-dots">
+      <button class="nav-dot active" onclick="goPage(1)"></button>
+      <button class="nav-dot" onclick="goPage(2)"></button>
+      <button class="nav-dot" onclick="goPage(3)"></button>
+      <button class="nav-dot" onclick="goPage(4)"></button>
+    </div>
+    <div class="nav-row">
+      <button class="nav-btn btn-primary" onclick="goPage(2)">Buka Surat 💌</button>
+    </div>
+  </div>
+
+  <div id="page2" class="page">
+    <div class="page-label">✦ Pesan Untukmu ✦</div>
+    <div class="letter-container">
+      <div class="letter-seal">♥</div>
+      <div class="letter-lines" id="letterLines"></div>
+      <div class="letter-date" id="letterDate"></div>
+      <div class="letter-greeting">To, pacal aku yang batu,</div>
+      <div class="letter-body">
+        Di hari yang istimewa ini, ada banyak hal yang ingin aku sampaikan, tetapi yang paling penting adalah betapa
+        bersyukurnya aku karena semesta mempertemukanku dengan seseorang sepertimu. Dari sekian banyak orang yang pernah
+        datang dan pergi dalam hidupku, kamu adalah salah satu alasan mengapa aku percaya bahwa kehadiran seseorang bisa
+        membawa begitu banyak arti. 🌹<br><br>
+
+        Mungkin aku tidak selalu pandai mengungkapkan perasaanku, tetapi aku harap kamu tahu bahwa setiap kenangan yang
+        kita ciptakan, setiap tawa yang kita bagi, bahkan setiap percakapan sederhana yang kita miliki, selalu memiliki
+        tempat yang istimewa di hatiku. Kamu telah menjadi bagian dari banyak hal baik dalam hidupku, dan untuk itu aku
+        akan selalu bersyukur. ❤️<br><br>
+
+        Aku tahu hidup tidak selalu berjalan sesuai harapan. Akan ada hari-hari ketika kamu merasa lelah, ragu, atau
+        bahkan kehilangan arah. Namun di tengah semua itu, jangan pernah melupakan satu hal: kamu adalah seseorang yang
+        sangat berharga. Kamu telah melewati begitu banyak hal hingga sampai di titik ini, dan aku bangga pada setiap
+        langkah yang telah kamu tempuh, bahkan pada langkah-langkah yang tidak pernah dilihat atau dipahami orang lain.
+        ✨<br><br>
+
+        Di usia yang baru ini, aku tidak hanya berharap kamu mendapatkan kebahagiaan. Aku berharap kamu menemukan
+        ketenangan dalam hatimu, menemukan alasan untuk tersenyum di hari-hari yang sulit, dan menemukan keberanian
+        untuk terus mengejar semua hal yang kamu impikan. Aku berharap kamu belajar melihat dirimu sebagaimana aku
+        melihatmu: seseorang yang begitu kuat, begitu hangat, dan begitu layak dicintai. 💖<br><br>
+
+        Terima kasih karena telah hadir dalam hidupku. Terima kasih untuk setiap senyum yang pernah kamu berikan, setiap
+        perhatian kecil yang mungkin tidak kamu sadari, dan setiap momen yang membuat hidup terasa lebih indah. Jika
+        suatu hari nanti kamu meragukan dirimu sendiri, ingatlah bahwa ada seseorang di sini yang selalu percaya padamu,
+        selalu mendukungmu, dan selalu mendoakan yang terbaik untukmu. 🌹<br><br>
+
+        Selamat ulang tahun. Semoga tahun ini menjadi awal dari lebih banyak kebahagiaan, lebih banyak mimpi yang
+        terwujud, dan lebih banyak alasan untuk tersenyum. Dan semoga, di antara semua hal baik yang akan datang, kamu
+        selalu ingat bahwa kamu dicintai lebih dari yang mungkin kamu sadari. ❤️🎂✨
+      </div>
+      <div class="envelope-deco"></div>
+      <div class="letter-sign">Dengan sepenuh hati,</div>
+      <div class="letter-from">Rafly Iqbal Maulana</div>
+    </div>
+
+    <div class="nav-dots" style="margin-top:20px">
+      <button class="nav-dot" onclick="goPage(1)"></button>
+      <button class="nav-dot active" onclick="goPage(2)"></button>
+      <button class="nav-dot" onclick="goPage(3)"></button>
+      <button class="nav-dot" onclick="goPage(4)"></button>
+    </div>
+    <div class="nav-row">
+      <button class="nav-btn btn-ghost" onclick="goPage(1)">← Kembali</button>
+      <button class="nav-btn btn-primary" onclick="goPage(3)">Lihat Album 📸</button>
+    </div>
+  </div>
+
+  <div id="page3" class="page">
+    <div class="bokeh-container" id="bokehContainer"></div>
+
+    <div id="flowerIntro" class="flower-intro">
+      <svg class="intro-flower-svg" viewBox="0 0 100 100">
+        <g fill="#e11d48">
+          <path d="M50 50 Q 65 10 50 5 Q 35 10 50 50" />
+          <path d="M50 50 Q 65 10 50 5 Q 35 10 50 50" transform="rotate(45 50 50)" />
+          <path d="M50 50 Q 65 10 50 5 Q 35 10 50 50" transform="rotate(90 50 50)" />
+          <path d="M50 50 Q 65 10 50 5 Q 35 10 50 50" transform="rotate(135 50 50)" />
+          <path d="M50 50 Q 65 10 50 5 Q 35 10 50 50" transform="rotate(180 50 50)" />
+          <path d="M50 50 Q 65 10 50 5 Q 35 10 50 50" transform="rotate(225 50 50)" />
+          <path d="M50 50 Q 65 10 50 50 Q 35 10 50 50" transform="rotate(270 50 50)" />
+          <path d="M50 50 Q 65 10 50 50" transform="rotate(315 50 50)" />
+        </g>
+        <circle cx="50" cy="50" r="12" fill="#fbbf24" />
+      </svg>
+      <div class="intro-text">Membuka Kenangan...</div>
+    </div>
+
+    <div id="albumContent" class="album-content" style="opacity: 0; pointer-events: none;">
+      <div class="music-player" id="musicPlayer" style="margin-bottom: 20px;">
+        <button class="music-btn" id="playBtn" onclick="toggleMusic()" title="Play/Pause">▶</button>
+        <div class="music-info">
+          <div class="music-title">🎵 Our Song</div>
+          <div class="music-bar-wrap">
+            <div class="music-bar" id="musicBar"></div>
+          </div>
+        </div>
+        <div class="music-note" id="musicNote">♪</div>
+      </div>
+
+      <div class="album-title">Buku Kenangan Kita</div>
+      <div class="album-sub">✦ Momen Berharga ✦</div>
+
+      <div class="book-wrapper">
+        <div class="book" id="flipbook">
+
+          <div class="book-page">
+            <div class="page-front cover-front">
+              <div class="album-ribbon"></div>
+              <h2
+                style="font-family:'Dancing Script',cursive; font-size: 36px; z-index:2; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+                Our Memories</h2>
+              <p style="font-size: 12px; margin-top: 15px; color:#fecdd3; z-index:2; letter-spacing: 1px;">Geser untuk
+                membuka ➔</p>
+            </div>
+            <div class="page-back scrapbook-page">
+              <div class="polaroid" style="transform: rotate(-3deg);">
+                <div class="tape"></div>
+                <img src="16.jpeg" alt="Memory 1">
+                <div class="polaroid-caption">hari jadian kita ✨</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="book-page">
+            <div class="page-front scrapbook-page">
+              <div class="polaroid" style="transform: rotate(2deg);">
+                <div class="tape"></div>
+                <img src="1.jpeg" alt="Memory 2">
+                <div class="polaroid-caption"> 🌸</div>
+              </div>
+            </div>
+            <div class="page-back scrapbook-page">
+              <div class="polaroid" style="transform: rotate(-1deg);">
+                <div class="tape"></div>
+                <img src="2.jpeg" alt="Memory 3">
+                <div class="polaroid-caption">❤️</div>
+              </div>
+            </div>
+          </div>
+          <div class="book-page">
+            <div class="page-front scrapbook-page">
+              <div class="polaroid" style="transform: rotate(2deg);">
+                <div class="tape"></div>
+                <img src="3.jpeg" alt="Memory 2">
+                <div class="polaroid-caption"> 🌸</div>
+              </div>
+            </div>
+            <div class="page-back scrapbook-page">
+              <div class="polaroid" style="transform: rotate(-1deg);">
+                <div class="tape"></div>
+                <img src="4.jpeg" alt="Memory 3">
+                <div class="polaroid-caption">❤️</div>
+              </div>
+            </div>
+          </div>
+          <div class="book-page">
+            <div class="page-front scrapbook-page">
+              <div class="polaroid" style="transform: rotate(2deg);">
+                <div class="tape"></div>
+                <img src="5.jpeg" alt="Memory 2">
+                <div class="polaroid-caption"> 🌸</div>
+              </div>
+            </div>
+            <div class="page-back scrapbook-page">
+              <div class="polaroid" style="transform: rotate(-1deg);">
+                <div class="tape"></div>
+                <img src="6.jpeg" alt="Memory 3">
+                <div class="polaroid-caption">❤️</div>
+              </div>
+            </div>
+          </div>
+          <div class="book-page">
+            <div class="page-front scrapbook-page">
+              <div class="polaroid" style="transform: rotate(2deg);">
+                <div class="tape"></div>
+                <img src="7.jpeg" alt="Memory 2">
+                <div class="polaroid-caption"> 🌸</div>
+              </div>
+            </div>
+            <div class="page-back scrapbook-page">
+              <div class="polaroid" style="transform: rotate(-1deg);">
+                <div class="tape"></div>
+                <img src="8.jpeg" alt="Memory 3">
+                <div class="polaroid-caption">❤️</div>
+              </div>
+            </div>
+          </div>
+          <div class="book-page">
+            <div class="page-front scrapbook-page">
+              <div class="polaroid" style="transform: rotate(2deg);">
+                <div class="tape"></div>
+                <img src="9.jpeg" alt="Memory 2">
+                <div class="polaroid-caption"> 🌸</div>
+              </div>
+            </div>
+            <div class="page-back scrapbook-page">
+              <div class="polaroid" style="transform: rotate(-1deg);">
+                <div class="tape"></div>
+                <img src="10.jpeg" alt="Memory 3">
+                <div class="polaroid-caption">❤️</div>
+              </div>
+            </div>
+          </div>
+          <div class="book-page">
+            <div class="page-front scrapbook-page">
+              <div class="polaroid" style="transform: rotate(2deg);">
+                <div class="tape"></div>
+                <img src="11.jpeg" alt="Memory 2">
+                <div class="polaroid-caption"> 🌸</div>
+              </div>
+            </div>
+            <div class="page-back scrapbook-page">
+              <div class="polaroid" style="transform: rotate(-1deg);">
+                <div class="tape"></div>
+                <img src="12.jpeg" alt="Memory 3">
+                <div class="polaroid-caption">❤️</div>
+              </div>
+            </div>
+          </div>
+          <div class="book-page">
+            <div class="page-front scrapbook-page">
+              <div class="polaroid" style="transform: rotate(2deg);">
+                <div class="tape"></div>
+                <img src="13.jpeg" alt="Memory 2">
+                <div class="polaroid-caption"> 🌸</div>
+              </div>
+            </div>
+            <div class="page-back scrapbook-page">
+              <div class="polaroid" style="transform: rotate(-1deg);">
+                <div class="tape"></div>
+                <img src="14.jpeg" alt="Memory 3">
+                <div class="polaroid-caption">❤️</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="book-page">
+            <div class="page-front scrapbook-page"
+              style="display: flex; flex-direction: column; justify-content: center;">
+              <h3 style="font-family:'Dancing Script',cursive; color:#9f1239; font-size:28px;">Terima Kasih</h3>
+              <p style="font-size: 13px; color:#4c0519; margin-top:15px; line-height: 1.6;">Untuk semua tawa
+                dan<br>cinta yang kamu berikan.</p>
+              <p style="font-size: 16px; color:#e11d48; margin-top:20px; font-weight: bold;">♥ I Love You ♥</p>
+            </div>
+            <div class="page-back cover-back">
+              <div class="album-ribbon" style="left:15px; right:auto;"></div>
+              <div
+                style="width: 60px; height: 60px; border-radius: 50%; border: 2px dashed rgba(255,255,255,0.2); margin: auto; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.3); font-size: 24px;">
+                ♥</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="book-controls" style="display: flex; gap: 20px; margin-top: 10px;">
+        <button class="nav-btn btn-ghost" onclick="slidePrev()">❮ Balik</button>
+        <button class="nav-btn btn-primary" onclick="slideNext()">Geser ❯</button>
+      </div>
+
+      <p class="flip-hint" style="color: #cbd5e1; font-size: 12px; margin-top: 20px;">✦ Kamu juga bisa men-swipe layar ✦
+      </p>
+
+      <div class="nav-dots" style="margin-top:20px">
+        <button class="nav-dot" onclick="goPage(1)"></button>
+        <button class="nav-dot" onclick="goPage(2)"></button>
+        <button class="nav-dot active" onclick="goPage(3)"></button>
+        <button class="nav-dot" onclick="goPage(4)"></button>
+      </div>
+      <div class="nav-row" style="margin-top: 10px;">
+        <button class="nav-btn btn-ghost" onclick="goPage(2)">← Surat</button>
+        <button class="nav-btn btn-primary" onclick="goPage(4)">Buka Hadiah 🎁</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="page4" class="page">
+    <div class="stars" id="stars4"></div>
+    <div class="gift-header">
+      <div class="gift-title">Kejutan Spesial!</div>
+      <div class="gift-sub">Sentuh kotaknya ya ✨</div>
+    </div>
+
+    <div class="gift-container" id="giftContainer" onclick="openGift()">
+      <div class="gift-box" id="giftBox">
+        <div class="gift-lid"></div>
+        <div class="gift-body"></div>
+        <div class="gift-ribbon-v"></div>
+        <div class="gift-ribbon-h"></div>
+        <div class="gift-bow"></div>
+      </div>
+      <div class="gift-content" id="giftContent">
+        <img src="https://media.giphy.com/media/l4pTfx2qLszoacZRS/giphy.gif" alt="Surprise Hug">
+        <h3>Surprise! 🎉</h3>
+        <p>Peluk online dari jauh! Semoga hari ulang tahunmu super menyenangkan dan penuh cinta. Mwah!</p>
+      </div>
+    </div>
+
+    <div class="nav-dots" style="margin-top:40px">
+      <button class="nav-dot" onclick="goPage(1)"></button>
+      <button class="nav-dot" onclick="goPage(2)"></button>
+      <button class="nav-dot" onclick="goPage(3)"></button>
+      <button class="nav-dot active" onclick="goPage(4)"></button>
+    </div>
+    <div class="nav-row">
+      <button class="nav-btn btn-ghost" onclick="goPage(3)">← Kembali ke Album</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
